@@ -90,8 +90,11 @@ endif
 NEVERALLOW_ARG :=
 ifeq ($(SELINUX_IGNORE_NEVERALLOWS),true)
 ifeq ($(TARGET_BUILD_VARIANT),user)
-$(error SELINUX_IGNORE_NEVERALLOWS := true cannot be used in user builds)
+ifneq ($(call is-board-platform-in-list, apq8084 msm8226 msm8909 msm8916 msm895>
+#$(error SELINUX_IGNORE_NEVERALLOWS := true cannot be used in user builds)
 endif
+endif
+
 $(warning Be careful when using the SELINUX_IGNORE_NEVERALLOWS flag. \
           It does not work in user builds and using it will \
           not stop you from failing CTS.)
