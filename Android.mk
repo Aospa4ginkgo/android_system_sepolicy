@@ -90,7 +90,7 @@ endif
 NEVERALLOW_ARG :=
 ifeq ($(SELINUX_IGNORE_NEVERALLOWS),true)
 ifeq ($(TARGET_BUILD_VARIANT),user)
-ifneq ($(call is-board-platform-in-list, apq8084 msm8226 msm8909 msm8916 msm895>
+ifneq ($(call is-board-platform-in-list, apq8084 msm8226 msm8909 msm8916 msm8953 ))
 #$(error SELINUX_IGNORE_NEVERALLOWS := true cannot be used in user builds)
 endif
 endif
